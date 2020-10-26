@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>test js page</title>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+
+    </head>
+    <body>
+        <button id="red">R</button>
+        <button id="green">G</button>
+        <button id="blue">B</button>
+        <script>
+            let body = document.querySelector("body");
+            document.querySelector("#red").onclick = function(){
+                body.style.backgroundColor = 'red';
+            }
+            document.querySelector("#green").onclick = function(){
+                body.style.backgroundColor = 'green';
+            }
+            document.querySelector("#blue").onclick = function(){
+                body.style.backgroundColor = 'blue';
+            }
+        </script>
+    </body>
+</html>

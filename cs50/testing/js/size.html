@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+       <title>Hello</title>
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
+    </head>
+    <body>
+        <p>This is some text</p>
+        <select>
+            <option value="large">Large text</option>
+            <option value="initial" selected>Medium text</option>
+            <option value="small">Small text</option>
+        </select>
+        <script>
+            document.querySelector('select').onchange = function(){
+                document.querySelector('p').style.fontSize = this.value;
+            }
+        </script>
+    </body>
+</html>
