@@ -8,4 +8,6 @@ function focusNavbar(){
     content = document.getElementById("body")
 
     content.style.opacity = "0.2";
+
+    window.scrollTo(0, 0);
 }
