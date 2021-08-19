@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>test page</title>
+    <script>
+        function getSize(){
+            let h = document.getElementById("height");
+            let w = document.getElementById("width");
+
+            h.innerHTML = window.innerHeight;
+            w.innerHTML = window.innerWidth;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getSize();">Get window size</button>
+    <h4>Height: <span id="height"></span></h4>
+    <h4>Width: <span id="width"></span></h4>
+</body>
+</html>
