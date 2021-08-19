@@ -1,4 +1,16 @@
-
+// When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar
+var prevScrollpos = window.pageYOffset;
+var currentScrollpos;
+window.onscroll = function() {
+    console.log("you scrolled");
+    currentScrollpos = window.pageYOffset;
+    if(prevScrollpos > currentScrollpos){
+        document.querySelector("nav").style.top = "0";
+    }else{
+        document.querySelector("nav").style.top = "-100px";
+    }
+    prevScrollpos = currentScrollpos;
+}
 
 
 // script for responsive navbar functioning
