@@ -354,7 +354,7 @@ margin: 0;
 
 @keyframes anim1{
     from {
-        transform: translateY(-100px);
+        transform: translateY(-50px);
         opacity: 0;
     }
     to {
