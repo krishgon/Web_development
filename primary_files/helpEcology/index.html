@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <!-- navbar -->
     <nav>
         <div class="brandTitle">Help<mark style="background-color: var(--fresh); color: white;">Ecology</mark></div>
         <img src="assets/menu_white_36dp.svg" alt="toggle menu" class="toggleButton" onclick="toggleMenu();">
@@ -19,19 +20,23 @@
         </ul>
         <button class="registerBtn">Register</button>
     </nav>
+
+    <!-- landing section -->
     <section class="topSection" id="home">
         <div class="main">
-            <div class="title">Let's <span style="color: var(--fresh);">Save</span> the Environment</div>
-            <div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ut natus neque velit
+            <div class="title anim" data-delay="0s">Let's <span style="color: var(--fresh);">Save</span> the Environment</div>
+            <div class="body anim" data-delay="0.7s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ut natus neque velit
                 nihil, modi libero dolore nesciunt quod iusto recusandae aliquam. Eum perspiciatis delectus, quam
                 necessitatibus esse voluptate est!</div>
         </div>
-        <img src="assets/familyCaringAboutEnvironment.jpg" alt="family caring about environment">
+        <img src="assets/familyCaringAboutEnvironment.jpg" alt="family caring about environment" class="anim" data-delay="0.3s">
     </section>
+
+    <!-- projects section -->
     <section class="projects" id="ourProjects">
         <div class="title">Our Projects</div>
         <div class="wrapper">
-            <div class="card">
+            <div class="card fadeIn" data-delay="0s">
                 <img src="assets/trees.jpg">
                 <div class="info">
                     <h1>Project 1</h1>
@@ -39,7 +44,7 @@
                     <a href="#" class="btn">Donate us</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card fadeIn" data-delay="0.5s">
                 <img src="assets/pond.jpg">
                 <div class="info">
                     <h1>Project 2</h1>
@@ -47,7 +52,7 @@
                     <a href="#" class="btn">Donate us</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card fadeIn" data-delay="1s">
                 <img src="assets/farms.jpg">
                 <div class="info">
                     <h1>Project 3</h1>
@@ -57,8 +62,10 @@
             </div>
         </div>
     </section>
+
+    <!-- donate section -->
     <section class="donate">
-        <div class="title">Help us achieve our goal</div>
+        <div class="title fadeTextIn">Help us achieve our goal</div>
         <div class="form">
             <label for="name">Name:</label>
             <input type="text" id="name">
@@ -76,6 +83,8 @@
             <input type="submit" value="Submit" class="submitButton">
         </div>
     </section>
+
+    <!-- footer -->
     <section class="footer">
         Copyright Help Ecology. All rights reserved.
     </section>
