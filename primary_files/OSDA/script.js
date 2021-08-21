@@ -1,6 +1,3 @@
-var carousel, currentScrollpos;
-
-
 // script when DOM has loaded succesfully
 document.addEventListener('DOMContentLoaded', () => {
     carousel = document.querySelector(".carousel");
@@ -28,6 +25,7 @@ function toggleMenu() {
 }
 
 //script for caraousel functioning
+var carousel, currentScrollpos;
 var scrolled = 0;
 var scrollAmount = 0;
 function carScroll(direction) {

@@ -39,13 +39,12 @@ nav {
     width: 100%;
     position: fixed;
     top: 0;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);;
     padding-left: 15vw;
     padding-right: 15vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(27, 35, 33, 1);
+    background-color: transparent;
     color: white;
     z-index: 3;
     transition: 0.3s;
@@ -61,25 +60,26 @@ ul {
 li a{
     text-decoration: none;
     color: white;
-    padding: 1.3rem;
+    padding: 3vh 1vw 3vh 1vw;
     font-family: 'Roboto Slab', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 100;
+    font-size: 1.4rem;
+    font-weight: 300;
     display: block;
 }
 
 li{
     transition: 0.3s;
+    border-radius: 0px 0px 20px 20px;
 }
 
 
 li:hover {
-    background-color: var(--lightBlue);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .brandTitle {
     font-family: 'Red Rose', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .toggleButton {
@@ -101,8 +101,8 @@ li:hover {
 }
 
 .main {
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.75);
-    border-radius: 20px;
+    /* box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.75); */
+    /* border-radius: 20px; */
 }
 
 .main > .title {
@@ -111,8 +111,8 @@ li:hover {
     line-height: 20vh;
     font-family: 'Roboto Slab', sans-serif;
     font-size: 4rem;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: black;
+    background-color: transparent;
+    color: white;
     padding-left: 1vw;
     padding-right: 1vw;
     border-radius: 20px 20px 0px 0px;
@@ -120,10 +120,10 @@ li:hover {
 
 .main > .body {
     padding: 3vh 2vw 3vh 2vw;
-    color: var(--veryDarkBlue);
+    color: black;
     font-size: 1.3rem;
-    background-color: rgba(255, 255, 255, 1);
-    border-radius: 0px 0px 20px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border-radius: 0px 0px 20px 20px; */
 }
 
 .aboutSection {

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose&family=Roboto+Slab:wght@200;300;400&family=Roboto:wght@300;400&display=swap');
+* {
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --veryDarkBlue: #1B2321;
+    --apnaBlack: #161616;
+    --lightBlue: #90D7FF;
+    --navyBlue: #0F1626;
+    --leather: #AB987A;
+    --coral: #FF533D;
+    --eggShell: #F5F5F5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Roboto', serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+}

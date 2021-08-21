@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Ecology</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="brandTitle">Help<mark style="background-color: var(--fresh); color: white;">Ecology</mark></div>
+        <img src="assets/menu_white_36dp.svg" alt="toggle menu" class="toggleButton" onclick="toggleMenu();">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ourProjects">Our Projects</a></li>
+        </ul>
+        <button class="registerBtn">Register</button>
+    </nav>
+    <section class="topSection" id="home">
+        <div class="main">
+            <div class="title">Let's <span style="color: var(--fresh);">Save</span> the Environment</div>
+            <div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ut natus neque velit
+                nihil, modi libero dolore nesciunt quod iusto recusandae aliquam. Eum perspiciatis delectus, quam
+                necessitatibus esse voluptate est!</div>
+        </div>
+        <img src="assets/familyCaringAboutEnvironment.jpg" alt="family caring about environment">
+    </section>
+    <section class="projects" id="ourProjects">
+        <div class="title">Our Projects</div>
+        <div class="wrapper">
+            <div class="card">
+                <img src="assets/trees.jpg">
+                <div class="info">
+                    <h1>Project 1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis incidunt, ad assumenda at.</p>
+                    <a href="#" class="btn">Donate us</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/pond.jpg">
+                <div class="info">
+                    <h1>Project 2</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis incidunt, ad assumenda at.</p>
+                    <a href="#" class="btn">Donate us</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/farms.jpg">
+                <div class="info">
+                    <h1>Project 3</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis incidunt, ad assumenda at.</p>
+                    <a href="#" class="btn">Donate us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="donate">
+        <div class="title">Help us achieve our goal</div>
+        <div class="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+            <label for="Amount">Amount:</label>
+            <input type="number" id="phNum">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email">
+            <label for="country">Country:</label>
+            <select id="country">
+                <option>USA</option>
+                <option>India</option>
+                <option>UK</option>
+                <option>Australia</option>
+            </select>
+            <input type="submit" value="Submit" class="submitButton">
+        </div>
+    </section>
+    <section class="footer">
+        Copyright Help Ecology. All rights reserved.
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>

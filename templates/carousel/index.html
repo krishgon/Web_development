@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caraousel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Rose&family=Roboto+Slab:wght@200;300;400&family=Roboto:wght@300;400&display=swap');
+
+        * {
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --veryDarkBlue: #1B2321;
+            --apnaBlack: #161616;
+            --lightBlue: #90D7FF;
+            --navyBlue: #0F1626;
+            --leather: #AB987A;
+            --coral: #FF533D;
+            --eggShell: #F5F5F5;
+            --carouselHeight: 90vh;
+            --carouselWidth: 80vw;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Roboto', serif;
+        }
+
+        /* template code */
+        .gallery {
+            height: 100vh;
+            width: 100vw;
+            background-color: var(--eggShell);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel {
+            width: var(--carouselWidth);
+            padding: 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            overflow-x: scroll;
+            scroll-behavior: smooth;
+            border-radius: 20px;
+            box-shadow: 0px 5px 10px rgba(15, 22, 38, 0.25);
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .arrow {
+            padding: 1vh 0px 1vh 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: max-content;
+            width: max-content;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .left {
+            left: calc((100vw - var(--carouselWidth))/2);
+        }
+
+        .right {
+            right: calc((100vw - var(--carouselWidth))/2);
+        }
+
+        .arrow>img {
+            width: 3.5vw;
+        }
+
+        .caraouselImg {
+            top: calc((100vh - var(--carouselHeight))/2);
+            background-position: center;
+            background-size: cover;
+            width: var(--carouselWidth);
+            height: var(--carouselHeight);
+        }
+
+        .carouselTextContainer {
+            width: var(--carouselWidth);
+            height: var(--carouselHeight);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .carouselText {
+            width: var(--carouselWidth);
+            height: var(--carouselHeight);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 20vw 0px 20vw;
+        }
+
+        .carouselTitle {
+            width: 100%;
+            text-align: center;
+            background-color: rgba(171, 152, 122, 1);
+            color: var(--navyBlue);
+            font-family: 'Roboto Slab', sans-serif;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 0px 2vw 0vh 2vw;
+        }
+
+        .carouselBody {
+            color: var(--eggShell);
+            font-size: 1.1rem;
+            padding: 2vh 4vw 2vh 4vw;
+            letter-spacing: 1px;
+            background-color: rgba(15, 22, 38, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="gallery" id="gallery">
+        <div class="carousel">
+            <div class="caraouselImg" style="background-image: url('images/galleryImage1.jpg');">
+                <div class="carouselTextContainer">
+                    <div class="carouselTitle">Title 1</div>
+                    <div class="carouselBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, in
+                        aliquam
+                        neque perspiciatis dolorum labore minus magnam quisquam corrupti assumenda, hic amet id sunt
+                        veritatis ipsa vel nulla tenetur laboriosam.</div>
+                </div>
+            </div>
+            <div class="caraouselImg" style="background-image: url('images/galleryImage2.jpg');">
+                <div class="carouselTextContainer">
+                    <div class="carouselTitle">Title 2</div>
+                    <div class="carouselBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, in
+                        aliquam
+                        neque perspiciatis dolorum labore minus magnam quisquam corrupti assumenda, hic amet id sunt
+                        veritatis ipsa vel nulla tenetur laboriosam.</div>
+                </div>
+            </div>
+            <div class="caraouselImg" style="background-image: url('images/galleryImage3.jpg');">
+                <div class="carouselTextContainer">
+                    <div class="carouselTitle">Title 3</div>
+                    <div class="carouselBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, in
+                        aliquam
+                        neque perspiciatis dolorum labore minus magnam quisquam corrupti assumenda, hic amet id sunt
+                        veritatis ipsa vel nulla tenetur laboriosam.</div>
+                </div>
+            </div>
+            <div class="caraouselImg" style="background-image: url('images/galleryImage4.jpg');">
+                <div class="carouselTextContainer">
+                    <div class="carouselTitle">Title 4</div>
+                    <div class="carouselBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, in
+                        aliquam
+                        neque perspiciatis dolorum labore minus magnam quisquam corrupti assumenda, hic amet id sunt
+                        veritatis ipsa vel nulla tenetur laboriosam.</div>
+                </div>
+            </div>
+            <div class="caraouselImg" style="background-image: url('images/galleryImage5.jpg');">
+                <div class="carouselTextContainer">
+                    <div class="carouselTitle">Title 5</div>
+                    <div class="carouselBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, in
+                        aliquam
+                        neque perspiciatis dolorum labore minus magnam quisquam corrupti assumenda, hic amet id sunt
+                        veritatis ipsa vel nulla tenetur laboriosam.</div>
+                </div>
+            </div>
+            <div class="caraouselImg" style="background-image: url('images/galleryImage6.jpg');">
+                <div class="carouselTextContainer">
+                    <div class="carouselTitle">Title 6</div>
+                    <div class="carouselBody">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam, in
+                        aliquam
+                        neque perspiciatis dolorum labore minus magnam quisquam corrupti assumenda, hic amet id sunt
+                        veritatis ipsa vel nulla tenetur laboriosam.</div>
+                </div>
+            </div>
+
+            <div class="left arrow"><img src="images/chevron_left_black_36dp.svg" alt="left arrow"
+                    onclick="carScroll('left');"></div>
+            <div class="right arrow"><img src="images/chevron_right_black_36dp.svg" alt="right arrow"
+                    onclick="carScroll('right');"></div>
+        </div>
+    </section>
+    <script>
+        //script for caraousel functioning
+        var carousel, currentScrollpos;
+        var scrolled = 0;
+        var scrollAmount = 0;
+        var carouselWidth;
+        function carScroll(direction) {
+            if (window.outerWidth <= 768) {
+                scrollAmount = window.outerWidth / 2;
+            } else {
+                carouselWidth = (80/100)*window.outerWidth;
+                scrollAmount = carouselWidth;
+            }
+            if (direction == "right") {
+                if (!(scrolled >= scrollAmount * 5)) {
+                    carousel.scroll(scrolled + scrollAmount, 0);
+                    scrolled = scrolled + scrollAmount;
+                }
+            } else {
+                if (!(scrolled <= 0)) {
+                    carousel.scroll(scrolled - scrollAmount, 0);
+                    scrolled = scrolled - scrollAmount, 0;
+                }
+            }
+            console.log(scrolled);
+        }
+
+        // script when DOM has loaded succesfully
+        document.addEventListener('DOMContentLoaded', () => {
+            carousel = document.querySelector(".carousel");
+        });
+
+    </script>
+</body>
+
+</html>

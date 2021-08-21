@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typewriter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Rose&family=Roboto+Slab:wght@200;300;400&family=Roboto:wght@300;400&display=swap');
+
+        * {
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        :root {}
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+
+        /* template code */
+        .wrapper {
+            font-family: 'Roboto Slab', sans-serif;
+            font-size: 3rem;
+        }
+
+        #typeWord {
+            color: #3d5aff;
+            border-right: 0.2rem solid rgba(0, 0, 0, 0.5);
+        }
+
+        /* responsive code */
+        @media only screen and (max-width: 768px){
+            .wrapper {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">Lorem ipsum dolor sit amet<span style="color: white;">f</span><span id="typeWord">Typewrite</span></div>
+    <script>
+        // Class which handles the typewriting effect
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                // If all words are complete, move to the first word
+                if (this.wordIndex == this.words.length) {
+                    this.wordIndex = 0;
+                }
+
+                // Get full text of current word
+                const fulltxt = this.words[this.wordIndex];
+
+                // Check if deleting
+                if (this.isDeleting) {
+                    // Remove char
+                    this.txt = fulltxt.substring(0, this.txt.length - 1);
+                } else {
+                    // Add char
+                    this.txt = fulltxt.substring(0, this.txt.length + 1);
+                }
+
+
+                // Insert txt into element
+                this.txtElement.innerHTML = '<span class="txt">' + this.txt + '</span>';
+
+                // Set the type delay such that the typing and deleting time remains same for all words
+                let typeDelay = Math.round(1000 / fulltxt.length);;
+
+                // Decrease typeDelay if the text is deleting    
+                if (this.isDeleting) {
+                    typeDelay /= 2;
+                }
+
+                // If word is complete
+                if (!this.isDeleting && this.txt == fulltxt) {
+                    // make pause at the end and change the state of typewriter
+                    typeDelay = this.wait;
+                    this.isDeleting = true;
+                }
+                // If word is completed deleting
+                else if (this.isDeleting && this.txt == '') {
+                    // move to next word, change the state of typewriter and wait for 500 mili-seconds
+                    this.wordIndex++;
+                    this.isDeleting = false;
+                    typeDelay = 500;
+                }
+                // Wait for the specified time and repeat the same function
+                setTimeout(() => this.type(), typeDelay);
+            }
+        }
+
+        // Start effect on DOM load
+        document.addEventListener('DOMContentLoaded', init);
+
+        function init() {
+            const txtElement = document.getElementById("typeWord");
+            const words = ["word1", "word2"];
+            const wait = 700;
+
+            // init typewriter
+            new TypeWriter(txtElement, words, wait);
+        }
+    </script>
+</body>
+
+</html>

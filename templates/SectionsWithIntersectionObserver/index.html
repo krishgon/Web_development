@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Rose&family=Roboto+Slab:wght@200;300;400&family=Roboto:wght@300;400&display=swap');
+
+        * {
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navyBlue: #0F1626;
+            --leather: #AB987A;
+            --coral: #FF533D;
+            --eggShell: #F5F5F5;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Roboto', serif;
+        }
+
+        /* template code */
+
+        /* top most section */
+        .topSection {
+            height: 100vh;
+            /* background: linear-gradient(0deg, rgba(15,22,38,1) 0%, rgba(245,245,245,1) 20%); */
+            background-color: var(--eggShell);
+            font-family: 'Roboto Slab', sans-serif;
+            font-size: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--navyBlue);
+        }
+
+
+        /* middle section */
+        .intersectionContainer {
+            background-color: var(--navyBlue);
+            padding: 20vh 10vw 20vh 10vw;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .intersectionContainer>.imageContainer>img {
+            width: 40vw;
+        }
+
+        .textPart {
+            margin-right: 2vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .intersectionContainer>.textPart>.title {
+            font-family: 'Roboto Slab', sans-serif;
+            font-size: 2.5rem;
+            background-color: transparent;
+            padding: 0px 0vw 0px 1vw;
+            color: var(--eggShell);
+            width: 100%;
+        }
+
+        .intersectionContainer>.textPart>.body {
+            color: rgb(209, 209, 209);
+            padding: 2vh 0 2vh 1vw;
+            font-size: 1.2rem;
+        }
+
+        /* fade animation */
+        .anim {
+            opacity: 0;
+        }
+
+        @keyframes anim1 {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+
+        /* last section */
+        .bottom {
+            background-color: var(--leather);
+        }
+
+        .bottom>.textPart {
+            order: 1;
+            margin-right: 0px;
+            margin-left: 2vw;
+        }
+
+        .bottom .textPart .title {
+            background-color: transparent;
+            color: black;
+        }
+
+        .bottom .textPart .body {
+            color: var(--navyBlue);
+        }
+
+        /* responsive code */
+        @media only screen and (max-width: 768px) {
+            .topSection {
+                font-size: 2rem;
+            }
+
+            .intersectionContainer {
+                flex-direction: column;
+                padding-top: 10vh;
+            }
+
+            .textPart {
+                margin: 0px;
+            }
+
+            .intersectionContainer>.textPart>.title {
+                font-size: 2rem;
+            }
+
+            .intersectionContainer>.textPart>.body {
+                font-size: 1rem;
+            }
+
+            .imageContainer {
+                margin-top: 4vh;
+                display: flex;
+                place-content: center;
+            }
+
+            .intersectionContainer>.imageContainer>img {
+                width: 75vw;
+                height: auto;
+            }
+
+            .bottom .textPart {
+                order: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="topSection">Welcome to the Template</section>
+    <section class="intersectionContainer">
+        <div class="textPart anim" data-delay="0.3s">
+            <div class="title">Your Title</div>
+            <div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt illo esse qui ex blanditiis
+                veniam amet facere quo culpa temporibus explicabo, a iste ullam animi, corporis, dicta expedita alias
+                consequatur.
+                Enim accusamus corrupti quo sit aliquid, explicabo non magni corporis minima, rem saepe tenetur nostrum
+                atque et reiciendis iure ex facilis fuga eius officia? Omnis explicabo cum dolorem non perferendis.
+            </div>
+        </div>
+        <div class="imageContainer anim" data-delay="0s"><img src="sideImage.jpg" alt="mountain scenery"></div>
+    </section>
+    <section class="intersectionContainer bottom">
+        <div class="textPart anim" data-delay="0.3s">
+            <div class="title">Your Title</div>
+            <div class="body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt illo esse qui ex blanditiis
+                veniam amet facere quo culpa temporibus explicabo, a iste ullam animi, corporis, dicta expedita alias
+                consequatur.
+                Enim accusamus corrupti quo sit aliquid, explicabo non magni corporis minima, rem saepe tenetur nostrum
+                atque et reiciendis iure ex facilis fuga eius officia? Omnis explicabo cum dolorem non perferendis.
+            </div>
+        </div>
+        <div class="imageContainer anim" data-delay="0s"><img src="sideImage2.jpg" alt="mountain scenery"></div>
+    </section>
+    <script>
+        // script when DOM has loaded succesfully
+        document.addEventListener('DOMContentLoaded', () => {
+            intersectionAnimation();
+        });
+
+        function intersectionAnimation() {
+            const myElements = document.querySelectorAll('.anim');
+
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.intersectionRatio > 0) {
+                        entry.target.style.animation = 'anim1 1.5s forwards ease-out';
+                        var animDelay = entry.target.dataset.delay;
+                        entry.target.style.animationDelay = animDelay;
+                    } else {
+                        entry.target.style.animation = 'none';
+                    }
+                })
+            });
+
+            myElements.forEach(myElement => {
+                observer.observe(myElement);
+            });
+        }
+    </script>
+</body>
+
+</html>
